@@ -4,7 +4,7 @@ Here are my solutions to Advent of Code 2020.
 
 ## Day 1
 
-Language: c++
+Language: C++
 
 Aproach: hash set to identify unique pairs.
 
@@ -60,6 +60,27 @@ int main(int argc, char *argv[]){
 <summary>Answer</summary>
 <br>
 
-756 * 1264 = **955584**
+$ 955584 $
+
+</details>
+
+## Day 2
+
+Language: Python
+
+Aproach:
+
+<details>
+<summary>Code</summary>
+<br>
+
+```Python
+```
+
+</details>
+
+<details>
+<summary>Answer</summary>
+<br>
 
 </details>
