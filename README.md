@@ -60,7 +60,7 @@ int main(int argc, char *argv[]){
 <summary>Answer</summary>
 <br>
 
-$ 955584 $
+756 * 1264 = **955584**
 
 </details>
 
