@@ -4,9 +4,15 @@ Here are my solutions to Advent of Code 2020.
 
 ## Day 1
 
+### Problem
+
+Specifically, they need you to find the two entries that sum to 2020 and then multiply those two numbers together.
+
+### Solution
+
 Language: C++
 
-Aproach: hash set to identify unique pairs.
+Aproach: unnordered hash set to identify unique pairs.
 
 <details>
 <summary>Code</summary>
@@ -65,6 +71,12 @@ int main(int argc, char *argv[]){
 </details>
 
 ## Day 2
+
+### Problem
+
+Find three numbers in your expense report that meet the same criteria.
+
+### Solution
 
 Language: Python
 
