@@ -5,6 +5,7 @@ Here are my solutions to Advent of Code 2020.
 ## Day 1
 
 Language: c++
+
 Aproach: hash set to identify unique pairs.
 
 <details>
