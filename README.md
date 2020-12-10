@@ -120,7 +120,7 @@ def main():
         return 1
 
 if __name__ == "__main__":
-    main()
+    main()  
 ```
 
 </details>
@@ -128,5 +128,7 @@ if __name__ == "__main__":
 <details>
 <summary>Answer</summary>
 <br>
+
 817 * 502 * 701 = **287503934**
+
 </details>
