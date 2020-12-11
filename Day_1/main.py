@@ -1,22 +1,32 @@
-from collections import OrderedDict
-
 def main():
     with open("input.txt", "r") as file:
-        numbers = list(map(lambda line: int(line), file.read().splitlines()))
+        numbers = [int(line) for line in file]
     
-    ocurrences = OrderedDict()
+    
+    numbers.sort()
     target = 2020
 
-    for i in numbers:
-        for j in numbers:
-            if target - i - j in ocurrences:
-                print("{0} * {1} * {2} = {3}".format(i, j, target-i-j, i * j * (target-i-j)))
+    for i in range(0, len(numbers)-2):
+        li = i+1
+        ri = len(numbers)-1
+        while(li < ri):
+            sum_partial = numbers[i] + numbers[li] + numbers[ri]
+            if (sum_partial == target):
+                print("{0} * {1} * {2} = {3}".format(
+                    numbers[i], numbers[li], numbers[ri],
+                    numbers[i] * numbers[li] * numbers[ri]
+                ))
                 return 0
+
+            elif (sum_partial < target):
+                li += 1
+
             else:
-                ocurrences[j] = None
+                ri -= 1
 
     print("Fail")
-    return 1
+    return 0
+
 
 if __name__ == "__main__":
     main()
