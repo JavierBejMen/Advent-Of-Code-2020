@@ -18,10 +18,10 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
-    vector<pair<int, int>> slopes = {
+    vector<pair<int, double>> slopes = {
         make_pair(1,1), make_pair(1,3),
         make_pair(1,5), make_pair(1,7),
-        make_pair(2,1)
+        make_pair(2,0.5)
     };
     
     int slope_problem_1 = 1;
@@ -36,26 +36,25 @@ int main(int argc, char const *argv[])
     int n_line = 1;
 
     while (input >> line){
-        cout << "line " << n_line << ": ";
         for(int i = 0; i < slopes.size(); i++){
             if(n_line % slopes[i].first == 0){
-                cout << i;
-                if (line[slopes[i].second*n_line % line.size()] == '#')
+                int x_pos = slopes[i].second*n_line;
+                if (line[x_pos % line.size()] == '#')
                     trees[i]++;
-            }
-            
+            }  
         }
-    cout << endl;
+
         n_line++;
     }
 
+    int i = 0;
     for (auto tree : trees){
-        cout << tree << endl;
+        cout << "[" << slopes[i].first << ", " << slopes[i].second << "]: " << tree << endl;
+        i++;
     }
     cout << "Part 1 Answer: " << trees[slope_problem_1] << endl;
     cout << "Part 2 Answer: " << accumulate(trees.begin(), trees.end(), (long int)1, multiplies<>()) << endl;
 
     input.close();
-
     return 0;
 }
