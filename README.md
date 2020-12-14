@@ -277,3 +277,9 @@ public class PasswordChecker {
 
 
 ## Day 3
+
+<details>
+<summary>Content</summary>
+<br>
+
+</details>
