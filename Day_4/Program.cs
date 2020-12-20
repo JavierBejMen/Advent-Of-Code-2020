@@ -44,7 +44,7 @@ namespace Day_4
                 if (regex.Matches(value).Count == 1){
                     int intValue = int.Parse(value);
                     // Console.WriteLine("Regex passed: " + intValue);
-                    if (intValue >= 1920 && intValue <= 2020)
+                    if (intValue >= 1920 && intValue <= 2002)
                         check = true;
                 }
                 return check;
@@ -81,7 +81,7 @@ namespace Day_4
                     int intValue = int.Parse(value.Substring(0,3));
                     if (intValue >= 150 && intValue <= 193)
                         check = true;
-                }else{
+                }else if (regex2.Matches(value).Count == 1){
                     int intValue = int.Parse(value.Substring(0,2));
                     if (intValue >= 59 && intValue <= 76)
                         check = true;
