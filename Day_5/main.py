@@ -39,7 +39,7 @@ def main(data_path):
     with open(data_path, "r") as file:
         highest_seat = 0
         seats_taken = {}
-        
+
         for row, column in seat_generator(file):
             id_seat = row * 8 + column
             if (id_seat > highest_seat): highest_seat = id_seat
@@ -56,9 +56,6 @@ def main(data_path):
         print(f"Part 2: {target_row * 8 + seats_free[target_row]}")
         
             
-
-    
-
 if __name__ == "__main__":
     if (len(argv) != 2):
         print("Usage: python main.py path_to_input.txt" + linesep)
