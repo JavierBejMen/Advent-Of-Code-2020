@@ -7,24 +7,20 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace Day_4
 {
-    public static class Program
-    {
-        public static IEnumerable<Dictionary<string, string>> GetSplittedPassports(this StreamReader reader)
-	    {
+    public static class Program{
+        public static IEnumerable<Dictionary<string, string>> GetSplittedPassports(this StreamReader reader){
             Dictionary<string, string> passport = new Dictionary<string, string>();
             string line;
             
-            while ( (line = reader.ReadLine()) != null)
+            while ((line = reader.ReadLine()) != null)
             {
-                if(line.Length != 0)
-                {
+                if (line.Length != 0){   
                     var dict = line.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
                         .Select(part => part.Split(':'))
                         .ToDictionary(split => split[0], split => split[1]);
 
                     passport = passport.Concat(dict).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-                }else
-                {   
+                }else{   
                     yield return passport;
                     passport.Clear();
                     continue;
@@ -117,21 +113,16 @@ namespace Day_4
             int goodPassports = 0;
             int goodPassports2 = 0;
             int i = 0;
-            using (var sr = new StreamReader("input.txt"))
-            {   
-                foreach (var passport in sr.GetSplittedPassports())
-                {
+            using (var sr = new StreamReader("input.txt")){   
+                foreach (var passport in sr.GetSplittedPassports()){
                     bool check = true;
                     bool check2 = true;
                     
                     foreach (var field in referencePassport){
-                        if (!passport.ContainsKey(field.Key))
-                        {
+                        if (!passport.ContainsKey(field.Key)){
                             check = false;
                             check2 = false;
-                        }else if (!field.Value(passport[field.Key]))
-                        {
-                            Console.WriteLine("{0} failed on {1}:{2}", i, field.Key, passport[field.Key]);
+                        }else if (!field.Value(passport[field.Key])){
                             check2 = false;
                         }              
                     }
@@ -144,8 +135,8 @@ namespace Day_4
                
             }
 
-            Console.WriteLine(goodPassports);
-            Console.WriteLine(goodPassports2);
+            Console.WriteLine("Part1: " + goodPassports);
+            Console.WriteLine("Part2: " + goodPassports2);
         }
     }
 }
